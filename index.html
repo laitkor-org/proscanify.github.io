@@ -79,7 +79,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             newDiv.innerHTML = "<h6 style='font-size: 14px; margin: 0px 0px 5px; padding: 0px; color: rgb(0, 0, 0);'>Cookie Settings</h6><p style='line-height: 1.5; margin: 0px; padding: 0px; font-size: 14px; color: rgb(68, 68, 68);'>We use cookies to enhance your experience, analyze site traffic and deliver personalized content. <span>Read our <a href='/privacy-policy' target='_blank' style='color: #333; font-weight: bold; text-decoration: none;'>Cookie Policy</a>.</span></p>";
             newDiv.classList.add("dynamic-div");
             // Get the container where the div will be appended
-            var container = document.getElementById("main");
+            var container = document.getElementById("CookieConsentPopUp");
             // Append the new div to the container
             container.appendChild(newDiv);
             var parent = document.getElementById("cookieConsent");
@@ -124,6 +124,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </head>
   
   <body>
+	<div id="CookieConsentPopUp"></div> 
 	<!-- Mobile nav -->      
 	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
 	    <div class="mobile_nav_close_button"><a href="" id="hideRight"><div data-icon="&#xe13f;" class="button_icon close_icon"></div></a></div>
