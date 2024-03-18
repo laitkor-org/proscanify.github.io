@@ -33,7 +33,27 @@
 	
 	<!--[if IE 9]>
     	<link href="css/ie.css" rel="stylesheet" media="screen">
-    <![endif]--> 	
+    <![endif]--> 
+
+<!-- Cookie Consent -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+ad_storage: 'denied',
+analytics_storage: 'denied',
+ad_personalization: 'denied',
+ad_user_data: 'denied'
+});
+gtag('consent', 'update', {
+ad_storage: 'denied',
+analytics_storage: 'denied',
+ad_personalization: 'denied',
+ad_user_data: 'denied'
+});
+</script>
+<!-- End Cookie Consent -->
+	  
 <!-- Google Tag Manager -->
 
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -975,6 +995,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MHVB24LD');</script>
 <!-- End Google Tag Manager -->
-    
+    <script src="https://static-content.laitkor.com/js/mibreitCookieConsent.min.js"></script>
+	  <script>
+        window.addEventListener('load', function () {
+            var newDiv = document.createElement("div");
+            newDiv.setAttribute('id', 'cookieConsent');
+            newDiv.innerHTML = "<h6 style='font-size: 14px; margin: 0px 0px 5px; padding: 0px; color: rgb(0, 0, 0);'>Cookie Settings</h6><p style='line-height: 1.5; margin: 0px; padding: 0px; font-size: 14px; color: rgb(68, 68, 68);'>We use cookies to enhance your experience, analyze site traffic and deliver personalized content. <span>Read our <a href='/privacy-policy' target='_blank' style='color: #333; font-weight: bold; text-decoration: none;'>Cookie Policy</a>.</span></p>";
+            newDiv.classList.add("dynamic-div");
+            // Get the container where the div will be appended
+            var container = document.getElementById("main");
+            // Append the new div to the container
+            container.appendChild(newDiv);
+            var parent = document.getElementById("cookieConsent");
+            var consentCookie = mibreitCookieConsent.getConsentCookie("consentCookie");
+            if (!consentCookie) {
+                mibreitCookieConsent.createCookieConsent(
+                    parent,
+                    [{
+                        label: "Google Analytics",
+                        cookieName: "GA4_Active",
+                        active: true,
+                        info: "This includes Google Analytics."
+                    }],
+                    (consentCookie) => {
+                        gtag('set', consentCookie);
+                        gtag('event', 'ConsentConfiguredEvent');
+                        if (consentCookie.GA4_Active) {
+                            gtag('consent', 'update', {
+                                analytics_storage: 'granted'
+                            });
+                        }
+                        if (parent) {
+                            parent.remove();
+                        }
+                    }
+                );
+            }
+            else {
+                gtag('set', consentCookie);
+                if (consentCookie.GA4_Active) {
+                    gtag('consent', 'update', {
+                        analytics_storage: 'granted'
+                    });
+                }
+                if (parent) {
+                    parent.remove();
+                }
+            }
+        });
+    </script>
   </body>
 </html>
