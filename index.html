@@ -34,7 +34,129 @@
 	<!--[if IE 9]>
     	<link href="css/ie.css" rel="stylesheet" media="screen">
     <![endif]--> 
-
+<style>
+#cookieConsent {
+  background: rgb(255, 255, 255);
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 0px 12px 0px rgb(0 0 0 / 8%);
+  overflow-y: auto;
+  border-radius: 14px;
+  width: 100%;
+  max-height: calc(100vh - 40px);
+  max-width: 360px;
+  padding: 15px;
+  z-index: 10;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #333;
+}
+.main_1Tj {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.main_1Tj button {
+  appearance: none;
+  width: 100%;
+  height: auto;
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  background: #eee;
+  color: #333;
+  font-size: 0;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: unset;
+  opacity: 1;
+  margin: 0px !important;
+}
+.main_1Tj button:nth-child(1) {
+  background: #333;
+  color: #fff;
+  width: calc(50% - 5px);
+  flex: 0 0 auto;
+}
+.main_1Tj button:nth-child(1):before {
+  content: 'Accept All';
+  font-size: 14px;
+}
+.main_1Tj button:nth-child(2) {
+  width: calc(50% - 5px);
+  flex: 0 0 auto;
+}
+.main_1Tj button:nth-child(2):before {
+  content: 'Customize';
+  font-size: 14px;
+}
+.main_1Tj button:hover {
+  background: #333;
+  color: #fff;
+}
+.main_1Tj .mibreit_CookieConsent_Selector {
+  width: 100%;
+  flex: 0 0 auto;
+  box-shadow: rgb(0 0 0 / 2%) 0px 0px 0px 0px inset;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: all;
+  opacity: 1;
+  margin: 0px !important;
+}
+.main_1Tj .mibreit_CookieConsent_Selector:nth-child(3), .main_1Tj button:nth-child(4) {
+  width: 100%;
+  flex: 0 0 auto;
+}
+.main_1Tj button:nth-child(4) {
+  background: #333;
+  color: #fff;
+}
+.main_1Tj button:nth-child(4):before {
+  content: 'Save Preferences';
+  font-size: 14px;
+}
+.setter_RN- {
+  margin: 0px !important;
+}
+.mibreit_CookieConsent_Label {
+  color: #333;
+  font-weight: bold;
+}
+.toggleButton_k5a {
+  width: 24px !important;
+  height: 14px !important;
+  border-radius: 20px !important;
+}
+.toggleButton_k5a span {
+  background-color: #e1e1e1 !important;
+  padding: 2px;
+}
+.toggleButton_k5a input:checked + span {
+  background-color: #333 !important;
+}
+.toggleButton_k5a span::before {
+  background-color: white;
+  border: unset !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+.mibreit_CookieConsent_Info {
+  padding: 0px !important;
+}
+.svgContainer_Sil svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+</style>
 <!-- Cookie Consent -->
 <script>
 window.dataLayer = window.dataLayer || [];
